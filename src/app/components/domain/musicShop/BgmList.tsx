@@ -13,11 +13,12 @@ import MusicIcon from '../../../../../public/images/musicicon.jpeg';
 import PresentIcon from '../../../../../public/images/present.jpeg';
 
 const BgmList = () => {
-  const [isMenuActive, setIsMenuActive] = useState<'kpop' | 'pop'>('kpop');
+  // const [isMenuActive, setIsMenuActive] = useState<'kpop' | 'pop'>('kpop');
 
   const { data } = useQuery<MusicList[]>({
     queryKey: ['musicList'],
     queryFn: getMusicList,
+    retry: 0,
   });
 
   const [showCount, setShowCount] = useState(10);
@@ -32,7 +33,7 @@ const BgmList = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center border-solid rounded-[10px]  p-[20px] bg-white w-[1200px]">
+    <div className="flex flex-col justify-center items-center border-solid rounded-[10px]  p-[20px] bg-white ">
       <div className="flex flex-col gap-[5px] items-center justify-center">
         <p className="text-[40px] font-bold text-bgColors-tertiary">
           싸이월드 뮤직
@@ -43,16 +44,12 @@ const BgmList = () => {
         <div className="flex flex-row justify-between items-center mb-[8px] border-b-[2px] border-bgColors-senary">
           <div className="flex flex-row gap-[4px]">
             <p
-              className={`font-bold cursor-pointer ${
-                isMenuActive === 'kpop'
-                  ? 'border-b-[2px] border-bgColors-septenary'
-                  : ''
-              }`}
-              onClick={() => setIsMenuActive('kpop')}
+              className={`font-bold cursor-pointerborder-b-[2px] border-bgColors-septenary`}
+              // // onClick={() => setIsMenuActive('kpop')}
             >
               인기 BGM
             </p>
-            <p
+            {/* <p
               className={`font-bold cursor-pointer ${
                 isMenuActive === 'pop'
                   ? 'border-b-[2px] border-bgColors-septenary'
@@ -61,7 +58,7 @@ const BgmList = () => {
               onClick={() => setIsMenuActive('pop')}
             >
               팝송 BGM
-            </p>
+            </p> */}
           </div>
           <div className="min-w-[80px] text-right">
             <button

@@ -1,8 +1,10 @@
 import axios from 'axios';
 import camelcaseKeys from 'camelcase-keys';
 
+const baseURL = process.env.NEXT_PUBLIC_API_URL;
+
 const api = axios.create({
-  baseURL: 'https://cyworldbeta.duckdns.org/cyworld/musicShop',
+  baseURL: baseURL,
   headers: {
     'Content-Type': 'application/json',
   },

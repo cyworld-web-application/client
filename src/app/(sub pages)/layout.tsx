@@ -6,7 +6,7 @@ interface SubPagesLayoutProps {
 
 export default function SubPagesLayout({ children }: SubPagesLayoutProps) {
   return (
-    <main className="flex flex-col items-center justify-center bg-bgColors-quaternary">
+    <main className="flex flex-col items-center justify-center bg-bgColors-quaternary h-auto">
       {children}
     </main>
   );
