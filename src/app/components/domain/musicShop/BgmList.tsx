@@ -33,7 +33,7 @@ const BgmList = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center border-solid rounded-[10px]  p-[20px] bg-white ">
+    <div className="flex flex-col  items-center border-solid rounded-[10px] p-[20px] bg-white w-full">
       <div className="flex flex-col gap-[5px] items-center justify-center">
         <p className="text-[40px] font-bold text-bgColors-tertiary">
           싸이월드 뮤직
@@ -94,7 +94,12 @@ const BgmList = () => {
                 >
                   {index + 1}
                 </td>
-                <td className="px-2 py-1 w-[231.76px]">{music.songName}</td>
+
+                <td className="px-2 py-1 w-[231.76px]" title={music.songName}>
+                  {music.songName.length > 10
+                    ? music.songName.slice(0, 14) + '...'
+                    : music.songName}
+                </td>
                 <td className="px-2 py-1 w-[231.76px]">{music.singer}</td>
                 <td className=" flex flex-row gap-[10px] font-bold text-textColors-septenary cursor-pointer">
                   <p>선물</p>
