@@ -34,13 +34,13 @@ const BgmList = () => {
 
   return (
     <div className="flex flex-col  items-center border-solid rounded-[10px] p-[20px] bg-white w-full">
-      <div className="flex flex-col gap-[5px] items-center justify-center">
-        <p className="text-[40px] font-bold text-bgColors-tertiary">
+      <div className="flex flex-col gap-[5px] items-center justify-center mb-[3rem]">
+        <p className="text-[2.5rem] font-bold text-bgColors-tertiary">
           싸이월드 뮤직
         </p>
         <p className="text-[16px] font-semibold">나만의 음악을 구매하세요!</p>
       </div>
-      <div className="flex flex-col bg-white border-solid border-bgColors-quinary border-[1px] rounded-[4px] text-[14px] mb-[30px] pt-[18px] pr-[18px] pb-[10px] pl-[18px] ">
+      <div className="flex flex-col bg-white border-solid border-bgColors-quinary border-[1px] rounded-[4px] text-[14px] mb-[30px] pt-[18px] px-[18px] pb-[10px] ">
         <div className="flex flex-row justify-between items-center mb-[8px] border-b-[2px] border-bgColors-senary">
           <div className="flex flex-row gap-[4px]">
             <p
