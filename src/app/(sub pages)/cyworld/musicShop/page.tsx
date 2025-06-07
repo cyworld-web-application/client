@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function MusicShop() {
   return (
-    <div className="flex flex-col w-full px-[325px]">
+    <div className="flex flex-col w-full mac:px-[5rem] px-[325px]">
       <Header />
       <div className="flex flex-row gap-8 mt-8 ">
         <aside className="flex flex-col gap-[20px] w-[30rem] ">
