@@ -82,11 +82,11 @@ const BgmList = () => {
                 <th className="px-2 py-1 text-center"></th>
               </tr>
             </thead>
-            <tbody className="w-full">
+            <tbody>
               {data?.slice(0, showCount).map((music, index) => (
                 <tr
                   key={music.id}
-                  className="border-b border-gray-200 font-light text-xs sm:text-sm md:text-[14px]"
+                  className="border-b border-gray-200 font-light text-xs sm:text-sm md:text-[14px] hover:bg-blue-50"
                 >
                   <td className="py-2 text-center">
                     <input type="checkbox" />
