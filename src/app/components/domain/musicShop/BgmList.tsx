@@ -33,7 +33,7 @@ const BgmList = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center border-solid rounded-[10px] p-4 sm:p-6 md:p-8 bg-white">
+    <div className="flex flex-col items-center border-solid rounded-[10px] p-4 sm:p-6 md:p-8 bg-white">
       <div className="flex flex-col gap-1 items-center justify-center mb-8">
         <p className="text-[40px] sm:text-3xl md:text-[2.5rem] font-extrabold text-bgColors-tertiary text-center">
           싸이월드 뮤직
@@ -42,7 +42,7 @@ const BgmList = () => {
           나만의 음악을 구매하세요!
         </p>
       </div>
-      <div className="w-full flex flex-col bg-white border-solid border-bgColors-quinary border rounded-[4px] text-xs sm:text-sm md:text-[14px] mb-6 pt-4 sm:pt-6 px-4 sm:px-6 pb-2 sm:pb-4">
+      <div className="flex flex-col bg-white border-solid border-bgColors-quinary border rounded-[4px] text-xs sm:text-sm md:text-[14px] mb-6 pt-4 sm:pt-6 px-4 sm:px-6 pb-2 sm:pb-4">
         <div className="flex flex-row flex-wrap justify-between items-center mb-2 border-b-2 border-bgColors-senary ">
           <div className="flex flex-row gap-1 sm:gap-2">
             <p
