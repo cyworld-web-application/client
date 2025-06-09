@@ -9,7 +9,7 @@ interface SideBoxProps {
 
 export const SideBox = ({ children }: SideBoxProps) => {
   return (
-    <div className="flex flex-col bg-white border-solid border-[1px] border-bgColors-quaternary rounded-[4px] m-b-[20px] p-[15px]">
+    <div className="w-full flex flex-col bg-white border-solid border-[1px] border-bgColors-quaternary rounded-[4px] m-b-[20px] p-[15px]">
       {children}
     </div>
   );
@@ -48,7 +48,7 @@ export const SideBoxSignInForm = ({ className }: SideBoxProps) => {
       </button>
       <Link
         href="https://cyworldbeta.duckdns.org/cyworld/user/register"
-        className="text-gray-400 text-center"
+        className="text-gray-400 text-center hover:text-textColors-quinary"
       >
         회원가입
       </Link>

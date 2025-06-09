@@ -33,18 +33,20 @@ const BgmList = () => {
   };
 
   return (
-    <div className="flex flex-col  items-center border-solid rounded-[10px] p-[20px] bg-white w-full">
-      <div className="flex flex-col gap-[5px] items-center justify-center mb-[3rem]">
-        <p className="text-[2.5rem] font-bold text-bgColors-tertiary">
+    <div className="w-full flex flex-col items-center border-solid rounded-[10px] p-4 sm:p-6 md:p-8 bg-white">
+      <div className="flex flex-col gap-1 items-center justify-center mb-8">
+        <p className="text-[40px] sm:text-3xl md:text-[2.5rem] font-extrabold text-bgColors-tertiary text-center">
           싸이월드 뮤직
         </p>
-        <p className="text-[16px] font-semibold">나만의 음악을 구매하세요!</p>
+        <p className="text-sm sm:text-base md:text-[16px] font-medium text-center">
+          나만의 음악을 구매하세요!
+        </p>
       </div>
-      <div className="flex flex-col bg-white border-solid border-bgColors-quinary border-[1px] rounded-[4px] text-[14px] mb-[30px] pt-[18px] px-[18px] pb-[10px] ">
-        <div className="flex flex-row justify-between items-center mb-[8px] border-b-[2px] border-bgColors-senary">
-          <div className="flex flex-row gap-[4px]">
+      <div className="w-full flex flex-col bg-white border-solid border-bgColors-quinary border rounded-[4px] text-xs sm:text-sm md:text-[14px] mb-6 pt-4 sm:pt-6 px-4 sm:px-6 pb-2 sm:pb-4">
+        <div className="flex flex-row flex-wrap justify-between items-center mb-2 border-b-2 border-bgColors-senary ">
+          <div className="flex flex-row gap-1 sm:gap-2">
             <p
-              className={`font-bold cursor-pointerborder-b-[2px] border-bgColors-septenary`}
+              className={`font-bold cursor-pointer border-b-2 border-bgColors-mint`}
               // // onClick={() => setIsMenuActive('kpop')}
             >
               인기 BGM
@@ -52,7 +54,7 @@ const BgmList = () => {
             {/* <p
               className={`font-bold cursor-pointer ${
                 isMenuActive === 'pop'
-                  ? 'border-b-[2px] border-bgColors-septenary'
+                  ? 'border-b-2 border-bgColors-septenary'
                   : ''
               }`}
               onClick={() => setIsMenuActive('pop')}
@@ -60,56 +62,63 @@ const BgmList = () => {
               팝송 BGM
             </p> */}
           </div>
-          <div className="min-w-[80px] text-right">
+          <div className="text-right">
             <button
-              className="text-gray-400 focus:outline-none"
+              className="text-gray-400 focus:outline-none text-xs sm:text-sm"
               onClick={handleToggle}
             >
               {isExpanded ? '접기 ▲' : '더보기 ▼'}
             </button>
           </div>
         </div>
-        <table className="w-[600px] text-left border-collapse">
-          <thead>
-            <tr className="border-b-[2px] bg-gray-100">
-              <th className="px-2 py-1"></th>
-              <th className="px-2 py-1">순위</th>
-              <th className="px-2 py-1">곡명</th>
-              <th className="px-2 py-1">아티스트</th>
-              <th className="px-2 py-1"></th>
-            </tr>
-          </thead>
-          <tbody>
-            {data?.slice(0, showCount).map((music, index) => (
-              <tr key={music.id} className="border-b border-gray-200">
-                <td className="px-2 py-1">
-                  <input type="checkbox" />
-                </td>
-                <td
-                  className={`px-2 py-1 ${
-                    index < 3
-                      ? ' text-textColors-tertiary font-bold'
-                      : 'text-textColors-septenary'
-                  }`}
-                >
-                  {index + 1}
-                </td>
-
-                <td className="px-2 py-1 w-[231.76px]" title={music.songName}>
-                  {music.songName.length > 10
-                    ? music.songName.slice(0, 14) + '...'
-                    : music.songName}
-                </td>
-                <td className="px-2 py-1 w-[231.76px]">{music.singer}</td>
-                <td className=" flex flex-row gap-[10px] font-bold text-textColors-septenary cursor-pointer">
-                  <p>선물</p>
-                  <p>구입</p>
-                </td>
+        <div className="w-full overflow-x-auto transition-all duration-300 min-h-[440px]">
+          <table className="w-full min-w-[500px] text-center border-collapse">
+            <thead>
+              <tr className="border-b-2 bg-bgColors-gray">
+                <th className="px-2 py-1 text-center"></th>
+                <th className="px-2 py-1 text-center">순위</th>
+                <th className="px-2 py-1 text-center">곡명</th>
+                <th className="px-2 py-1 text-center">아티스트</th>
+                <th className="px-2 py-1 text-center"></th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-        <div className="flex flex-row mt-[8px] gap-[8px] justify-between">
+            </thead>
+            <tbody className="w-full">
+              {data?.slice(0, showCount).map((music, index) => (
+                <tr
+                  key={music.id}
+                  className="border-b border-gray-200 font-light text-xs sm:text-sm md:text-[14px]"
+                >
+                  <td className="py-2 text-center">
+                    <input type="checkbox" />
+                  </td>
+                  <td
+                    className={`px-2 py-1 text-center  ${
+                      index < 3
+                        ? ' text-textColors-tertiary font-bold'
+                        : 'text-textColors-septenary'
+                    }`}
+                  >
+                    {index + 1}
+                  </td>
+                  <td
+                    className="w-[270.781px] sm:w-[231.76px] md:w-[231.76px] truncate font-light text-xs sm:text-sm md:text-[14px] text-center"
+                    title={music.songName}
+                  >
+                    {music.songName}
+                  </td>
+                  <td className="font-light w-[164.148px] sm:w-[120px] md:w-[174.16px] text-xs sm:text-sm md:text-[14px] truncate text-center">
+                    {music.singer}
+                  </td>
+                  <td className="flex flex-row gap-2 sm:gap-4 font-bold text-textColors-mint cursor-pointer px-1 sm:px-2 py-2 justify-center">
+                    <p>선물</p>
+                    <p>구입</p>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="flex flex-row justify-between min-x-[547.219px] mt-2">
           <div className="flex flex-row gap-2">
             <Buttons imageUrl={MusicIcon} text="듣기" />
             <Buttons imageUrl={BaguniIcon} text="태그담기" />

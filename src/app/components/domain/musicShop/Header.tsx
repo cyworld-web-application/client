@@ -14,7 +14,7 @@ const Header = () => {
         <p className="text-[24px] font-bold text-bgColors-tertiary">선물가게</p>
       </div>
       <nav>
-        <ul className="flex flex-row gap-[30px] items-center justify-center">
+        <ul className="flex flex-row gap-[30px] items-center justify-center sm:hidden">
           <li>
             <Link
               href="/"
