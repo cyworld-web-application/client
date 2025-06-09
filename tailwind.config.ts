@@ -25,6 +25,8 @@ const config: Config = {
           quinary: '#d7d7d7',
           senary: '#5BBFC0',
           septenary: '#3ec6ff',
+          gray: '#F7FAFD',
+          mint: '#5BBFC0',
         },
         textColors: {
           primary: '#ff914d',
@@ -34,6 +36,8 @@ const config: Config = {
           quinary: '#d7d7d7',
           senary: '#5BBFC0',
           septenary: '#3ec6ff',
+          gray: '#F7FAFD',
+          mint: '#5BBFC0',
         },
       },
     },
