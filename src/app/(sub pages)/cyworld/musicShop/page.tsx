@@ -16,9 +16,9 @@ export const metadata: Metadata = {
 
 export default function MusicShop() {
   return (
-    <div className="flex flex-col w-full mac:px-[10rem] px-[25em] sm:px-0">
+    <div className="flex flex-col w-full max-w-[1200px] mx-auto px-4 sm:px-0 min-w-0">
       <Header />
-      <div className="flex flex-row gap-8 mt-8 justify-center">
+      <div className="flex flex-row gap-8 mt-8 justify-center ">
         <aside className="flex flex-col gap-[20px] sm:hidden w-[220px]">
           <SideBox>
             <SideBoxTitle>로그인</SideBoxTitle>

@@ -33,7 +33,7 @@ const BgmList = () => {
   };
 
   return (
-    <div className="flex flex-col items-center border-solid rounded-[10px] p-4 sm:p-6 md:p-8 bg-white">
+    <div className="flex flex-col items-center border-solid rounded-[10px] p-4  bg-white">
       <div className="flex flex-col gap-1 items-center justify-center mb-8">
         <p className="text-[40px] sm:text-3xl md:text-[2.5rem] font-extrabold text-bgColors-tertiary text-center">
           싸이월드 뮤직
@@ -71,8 +71,8 @@ const BgmList = () => {
             </button>
           </div>
         </div>
-        <div className="w-full overflow-x-auto transition-all duration-300 min-h-[440px]">
-          <table className="w-full min-w-[500px] text-center border-collapse">
+        <div className="w-full overflow-x-auto transition-all duration-300">
+          <table className="w-full text-center border-collapse">
             <thead>
               <tr className="border-b-2 bg-bgColors-gray">
                 <th className="px-2 py-1 text-center"></th>
@@ -86,7 +86,7 @@ const BgmList = () => {
               {data?.slice(0, showCount).map((music, index) => (
                 <tr
                   key={music.id}
-                  className="border-b border-gray-200 font-light text-xs sm:text-sm md:text-[14px] hover:bg-blue-50"
+                  className="border-b border-gray-200 font-light text-xs  hover:bg-blue-50"
                 >
                   <td className="py-2 text-center">
                     <input type="checkbox" />
@@ -95,23 +95,23 @@ const BgmList = () => {
                     className={`px-2 py-1 text-center  ${
                       index < 3
                         ? ' text-textColors-tertiary font-bold'
-                        : 'text-textColors-septenary'
+                        : 'text-textColors-septenary font-bold'
                     }`}
                   >
                     {index + 1}
                   </td>
                   <td
-                    className="w-[270.781px] sm:w-[231.76px] md:w-[231.76px] truncate font-light text-xs sm:text-sm md:text-[14px] text-center"
+                    className="w-[270.781px]  truncate font-thin text-xs  text-center"
                     title={music.songName}
                   >
                     {music.songName}
                   </td>
-                  <td className="font-light w-[164.148px] sm:w-[120px] md:w-[174.16px] text-xs sm:text-sm md:text-[14px] truncate text-center">
+                  <td className="font-thin w-[164.148px]  text-xs  truncate text-center">
                     {music.singer}
                   </td>
-                  <td className="flex flex-row gap-2 sm:gap-4 font-bold text-textColors-mint cursor-pointer px-1 sm:px-2 py-2 justify-center">
-                    <p>선물</p>
-                    <p>구입</p>
+                  <td className="flex flex-row gap-2  font-bold text-textColors-mint cursor-pointer px-1  py-2 justify-center">
+                    <p className="text-nowrap">선물</p>
+                    <p className="text-nowrap">구입</p>
                   </td>
                 </tr>
               ))}
