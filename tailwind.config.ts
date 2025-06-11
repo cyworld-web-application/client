@@ -7,6 +7,14 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      mac: { max: '1499px' },
+      // => @media (max-width: 1119px) { ... }
+      md: { max: '1199px' }, // tablet
+
+      // => @media (max-width: 743px) { ... }
+      sm: { max: '743px' }, // mobile
+    },
     extend: {
       colors: {
         bgColors: {
@@ -17,6 +25,8 @@ const config: Config = {
           quinary: '#d7d7d7',
           senary: '#5BBFC0',
           septenary: '#3ec6ff',
+          gray: '#F7FAFD',
+          mint: '#5BBFC0',
         },
         textColors: {
           primary: '#ff914d',
@@ -26,6 +36,8 @@ const config: Config = {
           quinary: '#d7d7d7',
           senary: '#5BBFC0',
           septenary: '#3ec6ff',
+          gray: '#F7FAFD',
+          mint: '#5BBFC0',
         },
       },
     },

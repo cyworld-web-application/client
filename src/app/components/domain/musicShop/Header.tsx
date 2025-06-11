@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 const Header = () => {
   return (
-    <header className="flex flex-row justify-start items-center gap-[5em] border-solid border-b-[3px] border-b-bgColors-tertiary bg-white h-[60px] m-auto">
+    <header className="flex flex-row justify-start items-center gap-[5em] border-solid border-b-[3px] border-b-bgColors-tertiary bg-white h-[63px] m-auto w-full pl-8">
       <div className="flex flex-row gap-4 items-center justify-center">
         <Image
           src={CyworldLogo}
@@ -14,7 +14,7 @@ const Header = () => {
         <p className="text-[24px] font-bold text-bgColors-tertiary">선물가게</p>
       </div>
       <nav>
-        <ul className="flex flex-row gap-[30px] items-center justify-center">
+        <ul className="flex flex-row gap-[30px] items-center justify-center sm:hidden">
           <li>
             <Link
               href="/"
