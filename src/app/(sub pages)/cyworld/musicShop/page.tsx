@@ -1,18 +1,18 @@
-import BgmList from "@/app/components/domain/musicShop/BgmList";
-import Header from "@/app/components/domain/musicShop/Header";
+import BgmList from '@/app/components/domain/musicShop/BgmList';
+import Header from '@/app/components/domain/musicShop/Header';
 import {
   SideBox,
   SideBoxTitle,
-} from "@/app/components/domain/musicShop/SideBox";
-import { Metadata } from "next";
-import { SideBoxDescription } from "../../../components/domain/musicShop/SideBox";
-import Buttons from "@/app/components/common/Buttons";
-import { LoginForm } from "@/app/components/domain/musicShop/LoginForm";
-import UserInfo from "@/app/components/domain/musicShop/UserInfo";
+} from '@/app/components/domain/musicShop/SideBox';
+import { Metadata } from 'next';
+import { SideBoxDescription } from '../../../components/domain/musicShop/SideBox';
+import Buttons from '@/app/components/common/Buttons';
+import { LoginForm } from '@/app/components/domain/musicShop/LoginForm';
+import UserInfo from '@/app/components/domain/musicShop/UserInfo';
 
 export const metadata: Metadata = {
-  title: "싸이월드 선물가게",
-  description: "싸이월드 선물가게",
+  title: '싸이월드 선물가게',
+  description: '싸이월드 선물가게',
 };
 
 export default function MusicShop() {
@@ -24,7 +24,6 @@ export default function MusicShop() {
           <SideBox>
             <SideBoxTitle>로그인</SideBoxTitle>
             <LoginForm />
-            <UserInfo />
           </SideBox>
           <SideBox>
             <SideBoxTitle>공지사항</SideBoxTitle>

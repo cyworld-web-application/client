@@ -1,19 +1,27 @@
-"use client";
+'use client';
 
-import { getUserInfo } from "@/app/api/api";
-import { UserInfoProps } from "@/app/api/user";
-import { useQuery } from "@tanstack/react-query";
-import Link from "next/link";
-import React from "react";
+import { getUserInfo, getUserLogout } from '@/app/api/api';
+import { UserInfoProps } from '@/app/api/user';
+import { useQuery } from '@tanstack/react-query';
+import { cookies } from 'next/headers';
+import Link from 'next/link';
+import React, { useEffect } from 'react';
 
 const UserInfo = () => {
   const { data } = useQuery<UserInfoProps>({
-    queryKey: ["userInfo"],
+    queryKey: ['userInfo'],
     queryFn: getUserInfo,
     retry: 0,
   });
+
+  const handleUserLogout = () => {
+    getUserLogout();
+    sessionStorage.setItem('isUserDataCheck', 'false');
+    window.location.href = 'http://localhost:3000/cyworld/musicShop';
+  };
+
   return (
-    <div className="p-[10px] bg-bgColors-paleOrange border-[1px] border-solid border-bgColors-palePink rounded-[8px] align-text-left text-[14px] text-textColors-quinary leading-[1.6]">
+    <div className="p-[10px] bg-bgColors-paleOrange border-[1px] border-solid border-bgColors-palePink rounded-[8px] align-text-left text-[14px] leading-[1.6]">
       <p className="font-bold">👤 {data?.nickname}</p>
       <p className="font-bold">🐿️ 도토리:{data?.cyMoney}개</p>
       <Link
@@ -24,6 +32,7 @@ const UserInfo = () => {
       <Link href="https://cyworldbeta.duckdns.org/cyworld/">
         <p className="text-textColors-brightPink">🚪 메인으로 바로가기</p>
       </Link>
+      <p onClick={handleUserLogout}>로그아웃</p>
     </div>
   );
 };
