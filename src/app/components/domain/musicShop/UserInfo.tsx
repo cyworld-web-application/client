@@ -22,7 +22,12 @@ const UserInfo = () => {
 
   return (
     <div className="p-[10px] bg-bgColors-paleOrange border-[1px] border-solid border-bgColors-palePink rounded-[8px] align-text-left text-[14px] leading-[1.6]">
-      <p className="font-bold">👤 {data?.nickname}</p>
+      <div className="flex flex-row justify-between">
+        <p className="font-bold">👤 {data?.nickname}</p>
+        <p onClick={handleUserLogout} className="text-gray-400 cursor-pointer">
+          로그아웃
+        </p>
+      </div>
       <p className="font-bold">🐿️ 도토리:{data?.cyMoney}개</p>
       <Link
         href={`https://cyworldbeta.duckdns.org/cyworld/home/${data?.miniHomepageId}`}
@@ -32,7 +37,6 @@ const UserInfo = () => {
       <Link href="https://cyworldbeta.duckdns.org/cyworld/">
         <p className="text-textColors-brightPink">🚪 메인으로 바로가기</p>
       </Link>
-      <p onClick={handleUserLogout}>로그아웃</p>
     </div>
   );
 };
