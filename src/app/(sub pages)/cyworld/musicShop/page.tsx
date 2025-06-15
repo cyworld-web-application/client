@@ -2,12 +2,13 @@ import BgmList from '@/app/components/domain/musicShop/BgmList';
 import Header from '@/app/components/domain/musicShop/Header';
 import {
   SideBox,
-  SideBoxSignInForm,
   SideBoxTitle,
 } from '@/app/components/domain/musicShop/SideBox';
 import { Metadata } from 'next';
 import { SideBoxDescription } from '../../../components/domain/musicShop/SideBox';
 import Buttons from '@/app/components/common/Buttons';
+import { LoginForm } from '@/app/components/domain/musicShop/LoginForm';
+import UserInfo from '@/app/components/domain/musicShop/UserInfo';
 
 export const metadata: Metadata = {
   title: '싸이월드 선물가게',
@@ -22,7 +23,7 @@ export default function MusicShop() {
         <aside className="flex flex-col gap-[20px] sm:hidden w-[220px]">
           <SideBox>
             <SideBoxTitle>로그인</SideBoxTitle>
-            <SideBoxSignInForm />
+            <LoginForm />
           </SideBox>
           <SideBox>
             <SideBoxTitle>공지사항</SideBoxTitle>
@@ -42,7 +43,7 @@ export default function MusicShop() {
             <SideBoxTitle>재생목록</SideBoxTitle>
             <p className="font-bold text-">재생 중인 곡 없음</p>
             <div className="flex flex-row gap-[8px] flex-wrap mt-[10px]">
-              <Buttons text="▶️ 재생" />
+              <Buttons text="▶ 재생" />
               <Buttons text="⏸ 일시정지" />
               <Buttons text="⏹ 정지" />
               <Buttons text="⏮ 이전" />

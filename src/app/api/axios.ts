@@ -3,8 +3,15 @@ import camelcaseKeys from 'camelcase-keys';
 
 const baseURL = process.env.NEXT_PUBLIC_API_URL;
 
-const api = axios.create({
+export const api = axios.create({
   baseURL: baseURL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+export const userApi = axios.create({
+  baseURL: baseURL,
+  withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
   },
