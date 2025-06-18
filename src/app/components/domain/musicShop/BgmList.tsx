@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { MusicList } from '../../../api/musicList';
 import { useQuery } from '@tanstack/react-query';
-import { getMusicList } from '../../../api/api';
+import { getMusicList, postBuyBgmByOne } from '../../../api/api';
 
 import Buttons from '../../common/Buttons';
 
@@ -11,10 +11,13 @@ import BaguniIcon from '../../../../../public/images/baguni.jpeg';
 import DotoriIcon from '../../../../../public/images/dotori.jpeg';
 import MusicIcon from '../../../../../public/images/musicicon.jpeg';
 import PresentIcon from '../../../../../public/images/present.jpeg';
+import { AxiosError } from 'axios';
+import { useSelectedBgmPlayer } from '@/app/hooks/useSelectedBgmPlayer';
+import { useSelectedBgmPlayerContext } from '@/app/hooks/SelectedBgmPlayerProvider';
 
 const BgmList = () => {
   // const [isMenuActive, setIsMenuActive] = useState<'kpop' | 'pop'>('kpop');
-
+  const { playSelectedSongs, audioRef } = useSelectedBgmPlayerContext();
   const { data } = useQuery<MusicList[]>({
     queryKey: ['musicList'],
     queryFn: getMusicList,
@@ -29,6 +32,24 @@ const BgmList = () => {
       setShowCount(10);
     } else {
       setShowCount(100);
+    }
+  };
+
+  const handleBuy = async (bgmId: number) => {
+    if (!bgmId) {
+      alert('bgmId를 찾을 수 없습니다.');
+      return;
+    }
+    const confirmBuy = window.confirm('도토리 6개를 사용하시겠습니까?');
+    if (!confirmBuy) return;
+
+    try {
+      await postBuyBgmByOne(bgmId);
+      alert('곡이 성공적으로 구입되었습니다.');
+      window.location.reload();
+    } catch (error) {
+      const axiosError = error as AxiosError<{ message?: string }>;
+      alert(axiosError.response?.data?.message || '구매에 실패했습니다.');
     }
   };
 
@@ -89,7 +110,12 @@ const BgmList = () => {
                   className="border-b border-gray-200 font-light text-xs  hover:bg-blue-50"
                 >
                   <td className="py-2 text-center">
-                    <input type="checkbox" />
+                    <input
+                      type="radio"
+                      name="bgmId"
+                      data-bgm-url={music.bgmUrl}
+                      value={music.id}
+                    />
                   </td>
                   <td
                     className={`px-2 py-1 text-center  ${
@@ -111,7 +137,12 @@ const BgmList = () => {
                   </td>
                   <td className="flex flex-row gap-2  font-bold text-textColors-mint cursor-pointer px-1  py-2 justify-center">
                     <p className="text-nowrap">선물</p>
-                    <p className="text-nowrap">구입</p>
+                    <p
+                      className="text-nowrap"
+                      onClick={() => handleBuy(music.id)}
+                    >
+                      구입
+                    </p>
                   </td>
                 </tr>
               ))}
@@ -120,7 +151,12 @@ const BgmList = () => {
         </div>
         <div className="flex flex-row justify-between min-x-[547.219px] mt-2">
           <div className="flex flex-row gap-2">
-            <Buttons imageUrl={MusicIcon} text="듣기" />
+            <Buttons
+              imageUrl={MusicIcon}
+              text="듣기"
+              onClick={playSelectedSongs}
+            />
+            <audio ref={audioRef} />
             <Buttons imageUrl={BaguniIcon} text="태그담기" />
           </div>
           <div className="flex flex-row gap-2">
