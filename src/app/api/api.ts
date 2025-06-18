@@ -23,3 +23,8 @@ export const getUserLogout = async () => {
   const response = await userApi.get(`/user/api/logout`);
   return response;
 };
+
+export const postBuyBgmByOne = async (bgmId: number) => {
+  const response = await userApi.post(`/musicShop/buyBgmByOne?bgmId=${bgmId}`);
+  return response.data;
+};
