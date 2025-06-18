@@ -11,9 +11,13 @@ import UserInfo from './UserInfo';
 export const LoginForm = ({ className }: SideBoxProps) => {
   const [username, setUserName] = useState('');
   const [password, setUserPassword] = useState('');
-  const isUserStorage =
-    sessionStorage.getItem('isUserDataCheck') === 'false' ||
-    !sessionStorage.getItem('isUserDataCheck');
+  const [isUserStorage, setIsUserStorage] = useState<boolean | null>(null);
+  useEffect(() => {
+    const value =
+      sessionStorage.getItem('isUserDataCheck') === 'false' ||
+      !sessionStorage.getItem('isUserDataCheck');
+    setIsUserStorage(value);
+  }, []);
   const { mutate } = useMutation<LoginProps>({
     mutationKey: ['userData'],
     mutationFn: () => postLogin({ username, password }),
@@ -29,6 +33,8 @@ export const LoginForm = ({ className }: SideBoxProps) => {
     e.preventDefault();
     mutate();
   };
+
+  if (isUserStorage === null) return null;
 
   return (
     <>
