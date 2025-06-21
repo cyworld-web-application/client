@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 const Header = () => {
   return (
-    <header className="flex flex-row justify-start items-center gap-[5em] border-solid border-b-[3px] border-b-bgColors-tertiary bg-white h-[63px] m-auto w-full pl-8">
+    <header className="flex flex-row justify-start items-center gap-[5em] border-solid border-b-[3px] border-b-bgColors-tertiary bg-white h-[63px] m-auto w-full max-w-[1200px] pl-8">
       <div className="flex flex-row gap-4 items-center justify-center">
         <Image
           src={CyworldLogo}
@@ -17,7 +17,7 @@ const Header = () => {
         <ul className="flex flex-row gap-[30px] items-center justify-center sm:hidden">
           <li>
             <Link
-              href="/"
+              href="./musicShop"
               className="flex flex-col items-center justify-center"
             >
               <p className="text-[17.6px] font-bold">배경음악</p>
@@ -26,7 +26,7 @@ const Header = () => {
           </li>
           <li>
             <Link
-              href="/"
+              href="./minimiShop"
               className="flex flex-col items-center justify-center"
             >
               <p className="text-[17.6px] font-bold">미니미</p>
