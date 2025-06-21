@@ -17,7 +17,7 @@ const Header = () => {
         <ul className="flex flex-row gap-[30px] items-center justify-center sm:hidden">
           <li>
             <Link
-              href="./musicShop"
+              href="./music-shop"
               className="flex flex-col items-center justify-center"
             >
               <p className="text-[17.6px] font-bold">배경음악</p>
@@ -26,7 +26,7 @@ const Header = () => {
           </li>
           <li>
             <Link
-              href="./minimiShop"
+              href="./minimi-shop"
               className="flex flex-col items-center justify-center"
             >
               <p className="text-[17.6px] font-bold">미니미</p>

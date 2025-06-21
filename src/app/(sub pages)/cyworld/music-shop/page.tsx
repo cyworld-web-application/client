@@ -1,5 +1,5 @@
 import BgmList from '@/app/components/domain/musicShop/BgmList';
-import Header from '@/app/components/domain/musicShop/Header';
+
 import {
   SideBox,
   SideBoxTitle,
