@@ -14,7 +14,7 @@ export default function page() {
           배준오님의 미니홈피 구경하기
         </Link>
         <Link
-          href="/cyworld/musicShop"
+          href="/cyworld/music-shop"
           className="flex  py-[15px] px-[30px] text-[18px] border-none rounded-[12px] bg-bgColors-primary text-white font-bold"
         >
           선물 가게 (BETA 테스트 중)

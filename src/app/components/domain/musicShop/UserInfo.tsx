@@ -18,7 +18,7 @@ const UserInfo = () => {
     getUserLogout();
     sessionStorage.setItem('isUserDataCheck', 'false');
     sessionStorage.removeItem('isUserDataCheck');
-    window.location.href = 'http://localhost:3000/cyworld/musicShop';
+    window.location.href = 'http://localhost:3000/cyworld/music-shop';
   };
 
   return (
