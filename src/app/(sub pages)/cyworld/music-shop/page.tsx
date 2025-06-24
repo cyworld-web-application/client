@@ -11,8 +11,8 @@ import { SelectedBgmPlayerProvider } from '@/app/hooks/SelectedBgmPlayerProvider
 import SidebarPlayer from '@/app/components/domain/musicShop/SidebarPlayer';
 
 export const metadata: Metadata = {
-  title: '싸이월드 선물가게',
-  description: '싸이월드 선물가게',
+  title: '싸이월드 선물가게 - 뮤직샵 페이지',
+  description: '싸이월드 선물가게 - 뮤직샵 페이지입니다.',
 };
 
 export default function MusicShop() {
