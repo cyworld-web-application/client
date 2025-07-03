@@ -7,21 +7,28 @@ import { useEffect, useState } from 'react';
 import { SideBoxProps, SideBoxTitle } from './SideBox';
 import Link from 'next/link';
 import UserInfo from './UserInfo';
+import secureLocalStorage from 'react-secure-storage';
+import useAuthStore from '@/app/hooks/useAuthStore';
 
 export const LoginForm = ({ className }: SideBoxProps) => {
   const [username, setUserName] = useState('');
   const [password, setUserPassword] = useState('');
-  const isUserStorage =
-    sessionStorage.getItem('isUserDataCheck') === 'false' ||
-    !sessionStorage.getItem('isUserDataCheck');
+  const { isLoggedIn, setLoggedIn, checkLogin } = useAuthStore();
+
+  useEffect(() => {
+    checkLogin();
+  }, [checkLogin]);
+
   const { mutate } = useMutation<LoginProps>({
     mutationKey: ['userData'],
     mutationFn: () => postLogin({ username, password }),
     onSuccess: () => {
-      sessionStorage.setItem('isUserDataCheck', 'true');
+      secureLocalStorage.setItem('isUserDataCheck', 'true');
+      setLoggedIn(true);
     },
     onError: () => {
-      sessionStorage.setItem('isUserDataCheck', 'false');
+      secureLocalStorage.setItem('isUserDataCheck', 'false');
+      setLoggedIn(false);
     },
   });
 
@@ -32,7 +39,7 @@ export const LoginForm = ({ className }: SideBoxProps) => {
 
   return (
     <>
-      {isUserStorage ? (
+      {!isLoggedIn ? (
         <>
           <SideBoxTitle>로그인</SideBoxTitle>
           <form
