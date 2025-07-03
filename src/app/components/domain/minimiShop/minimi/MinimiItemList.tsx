@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import MinimiShopHeader from '../MinimiShopHeader';
-import MiniRoomItemList from '../miniroom/MiniRoomItemList';
+import MiniRoomItemList from '../miniRoom/MiniRoomItemList';
 import ItemCard from '../ItemCard';
 import { useQuery } from '@tanstack/react-query';
 import { MinimiListProps } from '@/app/api/minimiList';
@@ -44,6 +44,15 @@ const MinimiItemList = () => {
     }
   };
 
+  // 5일 이내인지 판별 함수
+  const isWithin5Days = (createdAt?: string) => {
+    if (!createdAt) return false;
+    const created = new Date(createdAt);
+    const now = new Date();
+    const diff = now.getTime() - created.getTime();
+    return diff <= 5 * 24 * 60 * 60 * 1000;
+  };
+
   return (
     <div className="flex flex-col items-center border-solid rounded-[10px] p-4  bg-white w-full">
       <div className="flex flex-col gap-1 items-center justify-center mb-8">
@@ -67,6 +76,9 @@ const MinimiItemList = () => {
                   minimiUrl={`https://storage.googleapis.com/${item.minimiUrl}`}
                   price={item.price}
                   onClick={() => handleBuyMinimi(item.id, item.price)}
+                  createdAt={
+                    isWithin5Days(item.createdAt) ? item.createdAt : undefined
+                  }
                 />
               ))}
             </div>
