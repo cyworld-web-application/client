@@ -1,13 +1,15 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode } from 'react';
 
 export interface SideBoxProps {
   children?: ReactNode;
   className?: string;
 }
 
-export const SideBox = ({ children }: SideBoxProps) => {
+export const SideBox = ({ children, className }: SideBoxProps) => {
   return (
-    <div className="w-full flex flex-col bg-white border-solid border-[1px] border-bgColors-quaternary rounded-[4px] m-b-[20px] p-[15px]">
+    <div
+      className={`w-full flex flex-col bg-white border-[0.2rem] m-b-[20px] p-[15px] ${className}`}
+    >
       {children}
     </div>
   );

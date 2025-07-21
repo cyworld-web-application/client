@@ -12,17 +12,17 @@ import DotoriIcon from '../../../../../public/images/dotori.jpeg';
 import MusicIcon from '../../../../../public/images/musicicon.jpeg';
 import PresentIcon from '../../../../../public/images/present.jpeg';
 import { AxiosError } from 'axios';
-import { useSelectedBgmPlayer } from '@/app/hooks/useSelectedBgmPlayer';
-import { useSelectedBgmPlayerContext } from '@/app/hooks/SelectedBgmPlayerProvider';
+import { useBgmAudioStore } from '@/app/hooks/useBgmAudioStore';
 
 const BgmList = () => {
   // const [isMenuActive, setIsMenuActive] = useState<'kpop' | 'pop'>('kpop');
-  const { playSelectedSongs, audioRef } = useSelectedBgmPlayerContext();
   const { data } = useQuery<MusicList[]>({
     queryKey: ['musicList'],
     queryFn: getMusicList,
     retry: 0,
   });
+
+  const { setAudio } = useBgmAudioStore();
 
   const [showCount, setShowCount] = useState(10);
   const isExpanded = showCount > 10;
@@ -154,9 +154,27 @@ const BgmList = () => {
             <Buttons
               imageUrl={MusicIcon}
               text="듣기"
-              onClick={playSelectedSongs}
+              onClick={() => {
+                // 현재 선택된 곡을 찾아서 setAudio 호출
+                const checked = document.querySelector<HTMLInputElement>(
+                  'input[name="bgmId"]:checked'
+                );
+                if (!checked) return;
+                const row = checked.closest('tr');
+                const title =
+                  row?.querySelector('td:nth-child(3)')?.textContent?.trim() ||
+                  '';
+                const singer =
+                  row?.querySelector('td:nth-child(4)')?.textContent?.trim() ||
+                  '';
+                const url =
+                  'https://storage.googleapis.com/' +
+                  (row?.getAttribute('data-bgm-url') ||
+                    checked.getAttribute('data-bgm-url') ||
+                    '');
+                setAudio({ title, url, singer });
+              }}
             />
-            <audio ref={audioRef} />
             <Buttons imageUrl={BaguniIcon} text="태그담기" />
           </div>
           <div className="flex flex-row gap-2">

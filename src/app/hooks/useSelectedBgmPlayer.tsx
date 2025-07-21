@@ -3,6 +3,7 @@ import { useState, useRef } from 'react';
 export interface AudioItem {
   title: string;
   url: string;
+  singer: string;
 }
 
 export function useSelectedBgmPlayer() {
@@ -23,25 +24,26 @@ export function useSelectedBgmPlayer() {
     const row = checked.closest('tr');
     const title =
       row?.querySelector('td:nth-child(3)')?.textContent?.trim() || '';
+    const singer =
+      row?.querySelector('td:nth-child(4)')?.textContent?.trim() || '';
     const url =
       'https://storage.googleapis.com/' +
       (row?.getAttribute('data-bgm-url') ||
         checked.getAttribute('data-bgm-url') ||
         '');
-    // 이미 audioList에 곡이 있고, 같은 곡이며, 일시정지 상태라면 이어서 재생
-    if (
-      audioList.length > 0 &&
-      audioList[0].url === url &&
-      audioRef.current &&
-      audioRef.current.paused &&
-      audioRef.current.currentTime > 0
-    ) {
-      audioRef.current.play();
+
+    // 이미 같은 곡이 재생 중이면(=src가 같고, 재생 중이거나 일시정지 상태) play만 호출
+    if (audioList.length > 0 && audioList[0].url === url && audioRef.current) {
+      // 일시정지 상태면 이어서 재생
+      if (audioRef.current.paused && audioRef.current.currentTime > 0) {
+        audioRef.current.play();
+      }
+      // 이미 재생 중이면 아무것도 하지 않음
       return;
     }
 
     // 그 외에는 새로 재생
-    setAudioList([{ title, url }]);
+    setAudioList([{ title, url, singer }]);
     setCurrent(0);
     if (url && audioRef.current) {
       audioRef.current.src = url;
@@ -51,12 +53,12 @@ export function useSelectedBgmPlayer() {
   };
 
   // 실제 오디오 재생
-  const playAudio = (url: string) => {
-    if (audioRef.current) {
-      audioRef.current.src = url;
-      audioRef.current.play();
-    }
-  };
+  // const playAudio = (url: string) => {
+  //   if (audioRef.current) {
+  //     audioRef.current.src = url;
+  //     audioRef.current.play();
+  //   }
+  // };
 
   // 다음 곡 재생
   // const playNext = () => {

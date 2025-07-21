@@ -1,25 +1,23 @@
-import BgmList from '@/app/components/domain/musicShop/BgmList';
-import Header from '@/app/components/domain/musicShop/Header';
+import MinimiItemList from '@/app/components/domain/minimiShop/minimi/MinimiItemList';
+import { LoginForm } from '@/app/components/domain/musicShop/LoginForm';
+import SidebarPlayer from '@/app/components/domain/musicShop/SidebarPlayer';
 import {
   SideBox,
+  SideBoxDescription,
   SideBoxTitle,
 } from '@/app/components/domain/musicShop/SideBox';
 import { Metadata } from 'next';
-import { SideBoxDescription } from '../../../components/domain/musicShop/SideBox';
-import { LoginForm } from '@/app/components/domain/musicShop/LoginForm';
-import { SelectedBgmPlayerProvider } from '@/app/hooks/SelectedBgmPlayerProvider';
-import SidebarPlayer from '@/app/components/domain/musicShop/SidebarPlayer';
+import React from 'react';
 
 export const metadata: Metadata = {
-  title: '싸이월드 선물가게',
-  description: '싸이월드 선물가게',
+  title: '싸이월드 선물가게 - 미니미샵 페이지',
+  description: '싸이월드 선물가게 - 미니미샵 페이지입니다.',
 };
 
-export default function MusicShop() {
+export default function MinimiShop() {
   return (
-    <SelectedBgmPlayerProvider>
+    <div className="w-full flex flex-col ">
       <div className="flex flex-col w-full max-w-[1200px] mx-auto px-4 sm:px-0 min-w-0">
-        <Header />
         <div className="flex flex-row gap-8 mt-8 justify-center ">
           <aside className="flex flex-col gap-[20px] sm:hidden w-[220px]">
             <SideBox>
@@ -39,13 +37,9 @@ export default function MusicShop() {
                 </li>
               </ul>
             </SideBox>
-            <SideBox>
-              <SideBoxTitle>재생목록</SideBoxTitle>
-              <SidebarPlayer />
-            </SideBox>
           </aside>
 
-          <BgmList />
+          <MinimiItemList />
 
           <aside className="flex flex-col gap-[20px] w-[220px] sm:hidden ">
             <SideBox>
@@ -78,6 +72,6 @@ export default function MusicShop() {
           </aside>
         </div>
       </div>
-    </SelectedBgmPlayerProvider>
+    </div>
   );
 }
