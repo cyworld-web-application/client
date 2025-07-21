@@ -2,6 +2,8 @@ import React from 'react';
 import CyworldLogo from '../../../../../public/images/cyworldlogo.svg';
 import Image from 'next/image';
 import Link from 'next/link';
+import { SideBoxTitle } from './SideBox';
+import SidebarPlayer from './SidebarPlayer';
 
 const Header = () => {
   // 네비게이션 메뉴 항목 배열
@@ -31,7 +33,7 @@ const Header = () => {
   return (
     <header className="flex flex-row justify-start items-center gap-[5em] border-solid border-b-[3px] border-b-bgColors-tertiary bg-white h-[63px] m-auto w-full max-w-[1200px] pl-8">
       <div className="flex flex-row gap-4 items-center justify-center">
-        <Link href="https://cyworldbeta.duckdns.org/cyworld/">
+        <Link href="http://localhost:3000">
           <Image
             src={CyworldLogo}
             alt="cyworld-logo"
@@ -55,6 +57,9 @@ const Header = () => {
           ))}
         </ul>
       </nav>
+      <div className="flex flex-row translate-x-[100%] absolute  w-[50%]">
+        <SidebarPlayer />
+      </div>
     </header>
   );
 };

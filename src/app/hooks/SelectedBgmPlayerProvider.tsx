@@ -1,7 +1,7 @@
 'use client';
 
 import React, { createContext, useContext } from 'react';
-import { useSelectedBgmPlayer, AudioItem } from './useSelectedBgmPlayer';
+import { useSelectedBgmPlayer } from './useSelectedBgmPlayer';
 
 const SelectedBgmPlayerContext = createContext<ReturnType<
   typeof useSelectedBgmPlayer

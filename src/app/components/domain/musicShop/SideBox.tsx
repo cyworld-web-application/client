@@ -5,9 +5,11 @@ export interface SideBoxProps {
   className?: string;
 }
 
-export const SideBox = ({ children }: SideBoxProps) => {
+export const SideBox = ({ children, className }: SideBoxProps) => {
   return (
-    <div className="w-full flex flex-col bg-white border-[0.2rem] m-b-[20px] p-[15px]">
+    <div
+      className={`w-full flex flex-col bg-white border-[0.2rem] m-b-[20px] p-[15px] ${className}`}
+    >
       {children}
     </div>
   );

@@ -2,7 +2,7 @@ import Image, { StaticImageData } from 'next/image';
 
 interface ButtonsProps {
   imageUrl?: StaticImageData | null;
-  text: string;
+  text: string | React.ReactNode;
   onClick?: () => void;
 }
 const Buttons = ({ imageUrl, text, onClick }: ButtonsProps) => {

@@ -1,6 +1,8 @@
 import { ReactNode } from 'react';
 import Header from '../components/domain/musicShop/Header';
 import { Metadata } from 'next';
+import SidebarPlayer from '../components/domain/musicShop/SidebarPlayer';
+import { SideBox, SideBoxTitle } from '../components/domain/musicShop/SideBox';
 
 interface SubPagesLayoutProps {
   children: ReactNode;

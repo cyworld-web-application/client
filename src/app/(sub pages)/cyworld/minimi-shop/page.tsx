@@ -1,5 +1,6 @@
 import MinimiItemList from '@/app/components/domain/minimiShop/minimi/MinimiItemList';
 import { LoginForm } from '@/app/components/domain/musicShop/LoginForm';
+import SidebarPlayer from '@/app/components/domain/musicShop/SidebarPlayer';
 import {
   SideBox,
   SideBoxDescription,

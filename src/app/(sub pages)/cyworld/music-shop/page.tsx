@@ -38,10 +38,6 @@ export default function MusicShop() {
                 </li>
               </ul>
             </SideBox>
-            <SideBox>
-              <SideBoxTitle>재생목록</SideBoxTitle>
-              <SidebarPlayer />
-            </SideBox>
           </aside>
 
           <BgmList />
