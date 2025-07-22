@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import MinimiShopHeader from '../MinimiShopHeader';
-import MiniRoomItemList from '../miniRoom/MiniRoomItemList';
+import MiniRoomItemList from '../miniroom/MiniRoomItemList';
 import ItemCard from '../ItemCard';
 import { useQuery } from '@tanstack/react-query';
 import { MinimiListProps } from '@/app/api/minimiList';
