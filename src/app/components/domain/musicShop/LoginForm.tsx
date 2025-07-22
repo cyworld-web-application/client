@@ -14,9 +14,12 @@ export const LoginForm = ({ className }: SideBoxProps) => {
   const [username, setUserName] = useState('');
   const [password, setUserPassword] = useState('');
   const { isLoggedIn, setLoggedIn, checkLogin } = useAuthStore();
+  const [isUserDataCheck, setIsUserDataCheck] = useState<string | null>(null);
 
   useEffect(() => {
     checkLogin();
+    const value = secureLocalStorage.getItem('isUserDataCheck');
+    setIsUserDataCheck(typeof value === 'string' ? value : null);
   }, [checkLogin]);
 
   const { mutate } = useMutation<LoginProps>({
@@ -40,7 +43,7 @@ export const LoginForm = ({ className }: SideBoxProps) => {
 
   return (
     <>
-      {secureLocalStorage.getItem('isUserDataCheck') === 'false' ? (
+      {!isLoggedIn && isUserDataCheck === 'false' ? (
         <>
           <SideBoxTitle>로그인</SideBoxTitle>
           <form
