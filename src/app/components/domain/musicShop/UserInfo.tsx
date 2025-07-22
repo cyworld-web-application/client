@@ -42,7 +42,7 @@ const UserInfo = () => {
     secureLocalStorage.setItem('isUserDataCheck', 'false');
     secureLocalStorage.removeItem('isUserDataCheck');
     setLoggedIn(false);
-    window.location.href = 'http://localhost:3000/cyworld/music-shop';
+    window.location.href = 'https://cyworld-beta.vercel.app/cyworld/music-shop';
   };
 
   // 미니미 리스트/페이지네이션 관련
