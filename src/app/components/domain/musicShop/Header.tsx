@@ -55,7 +55,7 @@ const Header = () => {
           ))}
         </ul>
       </nav>
-      <div className="flex flex-row translate-x-[100%] absolute  w-[50%]">
+      <div className="flex flex-row translate-x-[100%] absolute  w-[50rem]">
         <SidebarPlayer />
       </div>
     </header>

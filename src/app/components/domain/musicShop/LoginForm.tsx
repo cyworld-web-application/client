@@ -29,6 +29,7 @@ export const LoginForm = ({ className }: SideBoxProps) => {
     onError: () => {
       secureLocalStorage.setItem('isUserDataCheck', 'false');
       setLoggedIn(false);
+      alert('입력 한 정보를 다시 확인해주세요.');
     },
   });
 
@@ -39,7 +40,7 @@ export const LoginForm = ({ className }: SideBoxProps) => {
 
   return (
     <>
-      {!isLoggedIn ? (
+      {secureLocalStorage.getItem('isUserDataCheck') === 'false' ? (
         <>
           <SideBoxTitle>로그인</SideBoxTitle>
           <form
