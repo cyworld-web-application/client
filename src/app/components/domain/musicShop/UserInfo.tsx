@@ -40,7 +40,6 @@ const UserInfo = () => {
   const handleUserLogout = () => {
     getUserLogout();
     secureLocalStorage.setItem('isUserDataCheck', 'false');
-    secureLocalStorage.removeItem('isUserDataCheck');
     setLoggedIn(false);
     window.location.href = 'https://cyworld-beta.vercel.app/cyworld/music-shop';
   };
