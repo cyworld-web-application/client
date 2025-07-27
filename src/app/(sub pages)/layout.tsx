@@ -1,8 +1,6 @@
-import { ReactNode } from 'react';
-import Header from '../components/domain/musicShop/Header';
+import { ReactNode, useEffect, useState } from 'react';
 import { Metadata } from 'next';
-import SidebarPlayer from '../components/domain/musicShop/SidebarPlayer';
-import { SideBox, SideBoxTitle } from '../components/domain/musicShop/SideBox';
+import SubPageLayout from '../components/common/SubPageLayout';
 
 interface SubPagesLayoutProps {
   children: ReactNode;
@@ -13,12 +11,5 @@ export const metadata: Metadata = {
   description: '싸이월드 선물가게 페이지입니다.',
 };
 export default function SubPagesLayout({ children }: SubPagesLayoutProps) {
-  return (
-    <>
-      <Header />
-      <main className="flex flex-col items-center justify-center bg-bgColors-quaternary h-auto">
-        {children}
-      </main>
-    </>
-  );
+  return <SubPageLayout>{children}</SubPageLayout>;
 }
