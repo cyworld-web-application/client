@@ -73,7 +73,7 @@ const MinimiItemList = () => {
                 <ItemCard
                   key={item.id}
                   minimiName={item.minimiName}
-                  minimiUrl={`https://storage.googleapis.com/${item.minimiUrl}`}
+                  minimiUrl={`https://cyworld-bucket.s3.ap-northeast-2.amazonaws.com/${item.minimiUrl}`}
                   price={item.price}
                   onClick={() => handleBuyMinimi(item.id, item.price)}
                   createdAt={

@@ -61,7 +61,7 @@ const MinimiSelectModal = ({
               onClick={() => setSelectedId(item.minimiId)}
             >
               <ItemCard
-                minimiUrl={`https://storage.googleapis.com/${item.minimiUrl}`}
+                minimiUrl={`https://cyworld-bucket.s3.ap-northeast-2.amazonaws.com/${item.minimiUrl}`}
                 minimiName={item.minimiName}
                 createdAt={
                   isWithin3Days(item.purchasedAt) ? item.purchasedAt : undefined

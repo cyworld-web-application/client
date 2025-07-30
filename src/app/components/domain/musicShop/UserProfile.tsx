@@ -34,7 +34,9 @@ const UserProfile = ({
     />
     <div className="flex flex-row items-center gap-1 ml-2">
       <Image
-        src={'https://storage.googleapis.com/cyworld-bucket-2/dotori.png'}
+        src={
+          'https://cyworld-bucket.s3.ap-northeast-2.amazonaws.com/dotori.png'
+        }
         alt="도토리 이미지"
         width={20}
         height={20}

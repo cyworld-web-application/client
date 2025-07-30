@@ -29,7 +29,9 @@ const ItemCard = ({
       />
       {createdAt && (
         <Image
-          src={'https://storage.googleapis.com/cyworld-bucket-2/new.png'}
+          src={
+            'https://cyworld-bucket.s3.ap-northeast-2.amazonaws.com/cyworld-bucket-2/new.png'
+          }
           alt="새로운 아이템 N 아이콘"
           width={13}
           height={13}
@@ -41,7 +43,9 @@ const ItemCard = ({
       {price && (
         <div className="flex flex-row  items-center text-center gap-[0.2rem] size-[15px]">
           <Image
-            src={'https://storage.googleapis.com/cyworld-bucket-2/dotori.png'}
+            src={
+              'https://cyworld-bucket.s3.ap-northeast-2.amazonaws.com/dotori.png'
+            }
             alt="도토리 이미지"
             width={100}
             height={100}

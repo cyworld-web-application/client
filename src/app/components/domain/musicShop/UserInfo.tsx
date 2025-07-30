@@ -67,7 +67,7 @@ const UserInfo = () => {
   };
 
   // 현재 적용중인 미니미 url
-  const currentMinimiUrl = `https://storage.googleapis.com/${
+  const currentMinimiUrl = `https://cyworld-bucket.s3.ap-northeast-2.amazonaws.com/${
     minimiList.find((m) => m.isUsing)?.minimiUrl ?? ''
   }`;
 
@@ -105,7 +105,9 @@ const UserInfo = () => {
           ))}
           <div className="flex flex-row  items-center  text-center gap-[2rem] size-[10px] ">
             <Image
-              src={'https://storage.googleapis.com/cyworld-bucket-2/dotori.png'}
+              src={
+                'https://cyworld-bucket.s3.ap-northeast-2.amazonaws.com/dotori.png'
+              }
               alt="도토리 이미지"
               width={100}
               height={100}

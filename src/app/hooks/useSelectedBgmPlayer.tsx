@@ -27,7 +27,7 @@ export function useSelectedBgmPlayer() {
     const singer =
       row?.querySelector('td:nth-child(4)')?.textContent?.trim() || '';
     const url =
-      'https://storage.googleapis.com/' +
+      'https://cyworld-bucket.s3.ap-northeast-2.amazonaws.com/' +
       (row?.getAttribute('data-bgm-url') ||
         checked.getAttribute('data-bgm-url') ||
         '');
