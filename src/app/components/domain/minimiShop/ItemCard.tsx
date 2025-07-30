@@ -29,9 +29,7 @@ const ItemCard = ({
       />
       {createdAt && (
         <Image
-          src={
-            'https://cyworld-bucket.s3.ap-northeast-2.amazonaws.com/cyworld-bucket-2/new.png'
-          }
+          src={'https://cyworld-bucket.s3.ap-northeast-2.amazonaws.com/new.png'}
           alt="새로운 아이템 N 아이콘"
           width={13}
           height={13}
