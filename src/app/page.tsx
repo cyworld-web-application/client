@@ -8,7 +8,7 @@ export default function page() {
       </h1>
       <div className="flex flex-col gap-[5px]">
         <Link
-          href="https://cyworldbeta.duckdns.org/cyworld/home/1"
+          href="https://cyworld-a.duckdns.org/cyworld/home/1"
           className="flex py-[15px] px-[30px] text-[18px] border-none rounded-[12px] bg-bgColors-primary text-white font-bold text-center items-center justify-center"
         >
           배준오님의 미니홈피 구경하기

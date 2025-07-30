@@ -72,7 +72,7 @@ export const LoginForm = ({ className }: SideBoxProps) => {
               로그인
             </button>
             <Link
-              href="https://cyworldbeta.duckdns.org/cyworld/user/register"
+              href="https://cyworld-a.duckdns.org/cyworld/user/register"
               className="text-gray-400 text-center hover:text-textColors-quinary"
             >
               회원가입

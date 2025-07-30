@@ -127,7 +127,7 @@ const UserInfo = () => {
       )}
 
       <Link
-        href={`https://cyworldbeta.duckdns.org/cyworld/home/${data?.miniHomepageId}`}
+        href={`https://cyworld-a.duckdns.org/cyworld/home/${data?.miniHomepageId}`}
       >
         <p className="text-white bg-bgColors-tertiary border-solid rounded-[0.5rem] p-2 text-center">
           ＞ 내 미니홈피 바로가기

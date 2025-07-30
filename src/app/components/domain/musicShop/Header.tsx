@@ -31,7 +31,7 @@ const Header = () => {
   return (
     <header className="flex flex-row justify-start items-center gap-[5em] border-solid border-b-[3px] border-b-bgColors-tertiary bg-white h-[63px] m-auto w-full max-w-[1200px] pl-8">
       <div className="flex flex-row gap-4 items-center justify-center">
-        <Link href="https://cyworldbeta.duckdns.org/cyworld/">
+        <Link href="https://cyworld-a.duckdns.org/cyworld/">
           <Image
             src={CyworldLogo}
             alt="cyworld-logo"

@@ -34,7 +34,7 @@ export default function SubPageLayout({ children }: SubPagesLayoutProps) {
             감사합니다.
           </p>
           <Link
-            href="https://cyworldbeta.duckdns.org/cyworld/"
+            href="https://cyworld-a.duckdns.org/cyworld/"
             className="text-white border-solid border-2 border-textColors-primary rounded-md px-4 py-2 bg-bgColors-primary"
           >
             메인 페이지로 이동하기
