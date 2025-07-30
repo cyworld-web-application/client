@@ -3,7 +3,7 @@ import localFont from 'next/font/local';
 import './globals.css';
 import Providers from './lib/react-query/Provider';
 import { SelectedBgmPlayerProvider } from './hooks/SelectedBgmPlayerProvider';
-import SidebarPlayer from './components/domain/musicShop/SidebarPlayer';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -28,6 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+      <SpeedInsights />
       <Providers>
         <SelectedBgmPlayerProvider>
           <body
