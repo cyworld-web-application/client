@@ -56,3 +56,9 @@ export const postSelectMyMinimi = async ({
   );
   return response.data;
 };
+
+///// 배준오
+export const getTotalUsers = async () => {
+  const response = await userApi.get('/user/api/count');
+  return response.data;
+}
