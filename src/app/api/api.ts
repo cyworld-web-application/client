@@ -1,4 +1,5 @@
 import api, { userApi } from './axios';
+import { MiniHomepageResponseProps } from './minihomepi';
 import { MinimiListProps } from './minimiList';
 import { MusicList } from './musicList';
 import { LoginProps, SelectMyMinimiProps, UserInfoProps } from './user';
@@ -57,8 +58,15 @@ export const postSelectMyMinimi = async ({
   return response.data;
 };
 
+export const getMiniHomepage = async (
+  homeId: number
+): Promise<MiniHomepageResponseProps> => {
+  const response = await api.get(`/api/home/${homeId}`);
+  return response.data;
+};
+
 ///// 배준오
 export const getTotalUsers = async () => {
   const response = await userApi.get('/user/api/count');
   return response.data;
-}
+};

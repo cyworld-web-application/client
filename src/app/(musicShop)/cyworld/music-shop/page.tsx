@@ -8,7 +8,6 @@ import { Metadata } from 'next';
 import { SideBoxDescription } from '../../../components/domain/musicShop/SideBox';
 import { LoginForm } from '@/app/components/domain/musicShop/LoginForm';
 import { SelectedBgmPlayerProvider } from '@/app/hooks/SelectedBgmPlayerProvider';
-import SidebarPlayer from '@/app/components/domain/musicShop/SidebarPlayer';
 
 export const metadata: Metadata = {
   title: '싸이월드 선물가게 - 뮤직샵 페이지',

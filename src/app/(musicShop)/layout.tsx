@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode } from 'react';
 import { Metadata } from 'next';
 import SubPageLayout from '../components/common/SubPageLayout';
 
